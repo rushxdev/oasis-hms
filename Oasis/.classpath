@@ -13,6 +13,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/Y2 S1/OOP Project/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/JAR Files-20240617T171435Z-001/JAR Files/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/JAR Files-20240617T171435Z-001/JAR Files/javax.servlet-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/JAR Files-20240617T171435Z-001/JAR Files/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

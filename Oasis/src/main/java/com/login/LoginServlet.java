@@ -10,7 +10,10 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+   
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String username = request.getParameter("username");
@@ -42,7 +45,7 @@ public class LoginServlet extends HttpServlet {
             }
         } else {
             // Authentication failed
-            response.sendRedirect("login.jsp?error=Invalid username or password");
+            response.sendRedirect("logIn.jsp?error=Invalid username or password");
         }
     }
 }
