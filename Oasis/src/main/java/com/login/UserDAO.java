@@ -20,7 +20,7 @@ public class UserDAO {
             ResultSet rs = stmt.executeQuery();
             
             if (rs.next()) {
-                user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("role"));
+                user = new User(rs.getInt("user_id"), rs.getString("username"), rs.getString("role"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
