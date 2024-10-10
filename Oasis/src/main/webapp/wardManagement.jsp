@@ -11,8 +11,8 @@
 	<h1>Ward Management</h1>
 	
 	<ul>
-        <li><a href="WardServlet?action=viewWards">View Ward List</a></li>
-        <li><a href="addWard.jsp">Add New Ward</a></li>
+        <li><a href="WardServlet?action=list">View Ward List</a></li>
+        <li><a href="WardServlet?action=new">Add New Ward</a></li>
     </ul>
 	
 </body>

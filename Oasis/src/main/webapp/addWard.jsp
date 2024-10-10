@@ -8,18 +8,18 @@
 </head>
 <body>
 
-	<h1>Add New Ward</h1>
-    <form action="WardServlet" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br>
-        <label for="noOfBeds">No of Beds:</label>
-        <input type="number" name="noOfBeds" required><br>
+		<h1>Add New Ward</h1>
+   <form action="WardServlet?action=insert" method="post">
+        <label for="name">Ward Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="numberOfBeds">Number of Beds:</label>
+        <input type="number" id="numberOfBeds" name="numberOfBeds" required><br>
         <label for="department">Department:</label>
-        <input type="text" name="department" required><br>
-        <label for="nurseInCharge">Nurse in Charge:</label>
-        <input type="text" name="nurseInCharge" required><br>
-        <button type="submit" name="action" value="add">Add Ward</button>
+        <input type="text" id="department" name="department" required><br>
+        <button type="submit">Submit</button>
     </form>
+    
+    <a href="WardServlet?action=list">Back to Ward List</a>
 
 </body>
 </html>

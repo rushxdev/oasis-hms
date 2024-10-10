@@ -15,9 +15,8 @@
 		<tr>
 			<th>Ward ID</th>
             <th>Name</th>
-            <th>No of Beds</th>
+            <th>Number of Beds</th>
             <th>Department</th>
-            <th>Nurse in Charge</th>
             <th>Actions</th>
 		</tr>
 		
@@ -25,26 +24,20 @@
             <tr>
                 <td>${ward.wardId}</td>
                 <td>${ward.name}</td>
-                <td>${ward.noOfBeds}</td>
+                <td>${ward.numberOfBeds}</td>
                 <td>${ward.department}</td>
-                <td>${ward.nurseInCharge}</td>
                 <td>
                     <!-- Delete Form -->
-                    <form action="WardServlet" method="post">
-                        <input type="hidden" name="wardId" value="${ward.wardId}">
-                        <button type="submit" name="action" value="delete">Delete</button>
-                    </form>
+                    <a href="WardServlet?action=edit&wardId=${ward.wardId}">Edit</a>
                     <!-- Edit Form -->
-                    <form action="editWard.jsp" method="post">
-	                    <input type="hidden" name="action" value="editWard">
-	                    <input type="hidden" name="wardId" value="${ward.wardId}">
-	                    <button type="submit">Edit</button>
-                	</form>
+                    <a href="WardServlet?action=delete&wardId=${ward.wardId}" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>
 	
 	</table>
+	
+	<a href="WardServlet?action=new">Add New Ward</a>
 	
 </body>
 </html>
