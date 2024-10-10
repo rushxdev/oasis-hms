@@ -1,0 +1,497 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f0ff; /* Light blue background */
+}
+
+.hospital-icon {
+    width: 50px;  /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+    vertical-align: middle; /* Aligns icon with text */
+}
+
+.user-icon {
+    width: 50px;  /* Set desired width */
+    height: 50px; /* Set a fixed height to maintain a square aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Crop the image to fit the circle */
+    margin-right: 10px; /* Space between icon and text */
+    vertical-align: middle; /* Aligns icon with text */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: right; /* Or align it according to your layout */
+}
+
+.user-name {
+    display: block;
+    font-weight: bold;
+}
+
+
+.user-role {
+    display: block;
+    font-size: 20px;
+    color: #d9f2f2;
+    margin-top: -10px; /* Adjust for spacing */
+}
+
+
+
+#user-type {
+    font-size: 0.9em; /* You can adjust the font size if you want */
+    color: #555; /* Customize the color for distinction */
+}
+
+/* Log Out button styles */
+.logout-btn {
+    margin-left: 20px; /* Space between user name and Log Out button */
+    background-color: #00487C;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* Hover effect for Log Out button */
+.logout-btn:hover {
+    background-color: #00335A; /* Darker on hover */
+}
+
+
+
+/* Top Bar Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    background-color: #00335A;
+    color: white;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+/* Bottom Bar */
+.bottom-bar {
+    background-color: #00335A;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add slight shadow for separation */
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: #fff;
+    color: #00487C;
+    height: calc(100vh - 140px); /* Adjust height to account for both top and bottom bars */
+    padding: 20px;
+    position: fixed;
+    top: 90px; /* Space for the top bar */
+    bottom: 80px; /* Space for the bottom bar */
+    left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Spacing from top */
+}
+
+.sidebar-menu li {
+    margin-bottom: 15px;
+}
+
+/* Active Menu Item */
+.sidebar-menu li.active a {
+    background-color: #e8f1fa; /* Highlight background color */
+    color: #42005a; /* Text color for active item */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+
+
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    color: #00487C;
+    text-decoration: none;
+    font-size: 16px; /* Balanced font size */
+    font-weight: bold;
+    padding: 10px; /* Consistent padding */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar-menu li a:hover {
+    background-color: #e8f1fa; /* Soft background on hover */
+}
+
+/* Sidebar Icon Styles */
+.sidebar-icon {
+    width: 24px; /* Adjust size to desired width */
+    height: 24px; /* Maintain equal width and height for uniform icons */
+    margin-right: 10px; /* Space between the icon and the text */
+    vertical-align: middle; /* Align icon with the text */
+}
+
+/* Additional hover effect to highlight icons */
+.sidebar-menu li a:hover .sidebar-icon {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+
+
+/* Dashboard Section - Smaller Version */
+.dashboard-section {
+    padding: 15px;  /* Reduced padding */
+    background-color: #fff;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    height: calc(100vh - 140px); /* Reduced height for smaller appearance */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    margin-top: 90px; /* Space below the top bar */
+    margin-left: 310px; /* Space for the sidebar */
+    margin-right: 50px; 
+    margin-bottom: 10px;
+}
+
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between boxes */
+    width: 100%; /* Make the grid take full width */
+    max-width: 800px; /* Limit max width for centering */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Individual Dashboard Box */
+.dashboard-box {
+    background-color: #f1f5f9; /* Light background for boxes */
+    padding: 30px; /* Increased padding for elegance */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    height: 220px; /* Fixed height for boxes */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+}
+
+/* Pop-up effect on hover */
+.dashboard-box:hover {
+    transform: scale(1.05); /* Scale up the box */
+    background-color: #cce4f7; /* Slightly lighter background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    opacity: 1; /* Make it clear */
+}
+
+/* Image Styles */
+.dashboard-box img {
+    width: 60px; /* Adjust width of icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Dashboard Box Heading */
+.dashboard-box h3 {
+    margin-top: 5px; /* Space above heading */
+    font-size: 18px; /* Font size adjustment */
+    color: #333;
+}
+
+/* Dashboard Box Description */
+.dashboard-box p {
+    margin-top: 5px; /* Space between heading and description */
+    font-size: 14px; /* Font size for description */
+    color: #666; /* Softer color */
+}
+
+/* User Details Form Styles */
+#user-details-form {
+    margin: 20px 20px 80px 320px; /* Space from sidebar and bottom bar */
+    margin-top: 90px; /* Adjusted margin for top to avoid overlap with top bar */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00487C; /* Softer heading color */
+}
+
+.form-container {
+    background-color: #f9f9f9; /* Light background for minimalist look */
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Lighter border color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    padding: 20px;
+}
+
+fieldset {
+    border: 1px solid #cfd8dc; /* Softer border for fieldset */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Spacing between fieldsets */
+}
+
+legend {
+    font-weight: bold;
+    color: #00487C; /* Legend color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Softer label color */
+}
+
+/* Profile Picture Section Styles */
+.profile-picture-container {
+    display: flex; /* Use flexbox to align items in a row */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space below the profile picture section */
+}
+
+.file-input {
+    margin-left: 10px; /* Space between the label and the file input */
+    display: inline-block; /* Ensure input behaves correctly with flexbox */
+}
+
+.profile-preview {
+    width: 80px; /* Set the desired width */
+    height: 80px; /* Ensure height matches width */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 10px; /* Space between the image and text */
+    object-fit: cover; /* Crop the image nicely within the circular shape */
+}
+
+.profile-picture-container {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space below the profile picture section */
+}
+
+.change-profile-text {
+    font-weight: bold; /* Make the text bold */
+    color: #00487C; /* Text color to match the theme */
+    margin-bottom: 5px; /* Space between the text and input */
+}
+
+.gender-container {
+    display: flex; /* Align radio buttons in a row */
+    align-items: center; /* Center items vertically */
+    margin-top: 5px; /* Space above the gender radio buttons */
+}
+
+.gender-container label {
+    margin-right: 15px; /* Space between male and female labels */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px; /* Balanced font size */
+    transition: border-color 0.3s ease; /* Smooth focus effect */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #00487C; /* Change border color on focus */
+}
+
+/* Button Styles */
+button[type="submit"],
+button[type="button"] {
+    background-color: #009688; /* Softer button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #00796b; /* Darker on hover */
+}
+
+/* Choose File Styles */
+input[type="file"] {
+    background-color: #e0f2f1; /* Lighter background for file input */
+    border: 1px solid #009688; /* Border to match button color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding for file input */
+}
+
+/* Undo Button */
+.undo-button {
+    background-color: #ffc107; /* Yellow background for undo button */
+    color: black;
+}
+
+.sidebar-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+
+
+
+/* Default styles for dashboard icons */
+.dashboard-box img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover and active */
+}
+
+
+
+
+
+/* Book Appointment Form Styles */
+#book-appointment-section {
+    margin: 20px 20px 80px 320px; /* Space from sidebar and bottom bar */
+    margin-top: 90px; /* Adjusted margin for top to avoid overlap with top bar */
+}
+
+.form-container {
+    background-color: #f9f9f9; /* Light background for minimalist look */
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Lighter border color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00487C; /* Softer heading color */
+}
+
+fieldset {
+    border: 1px solid #cfd8dc; /* Softer border for fieldset */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Spacing between fieldsets */
+}
+
+legend {
+    font-weight: bold;
+    color: #00487C; /* Legend color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Softer label color */
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for input fields */
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Border for input fields */
+    transition: border-color 0.3s; /* Transition effect for focus */
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #00487C; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button[type="submit"] {
+    background-color: #00487C; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for button */
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Transition effect for hover */
+}
+
+button[type="submit"]:hover {
+    background-color: #003366; /* Darker shade on hover */
+}
+
+.time-slot-options {
+    display: flex; /* Flexbox for better alignment */
+    flex-direction: column; /* Stack time slots vertically */
+}
+
+.time-slot-options input[type="checkbox"] {
+    margin: 5px 0; /* Space between checkbox options */
+}
+
+.time-slot-options label {
+    margin-left: 5px; /* Space between checkbox and label */
+}
+
+
+
